@@ -71,7 +71,7 @@ def job():
    console.success("final.csv")
 
 def main ():
-  schedule.every().day.at("23:16").do(job)
+  schedule.every().day.at("21:10").do(job)
   while True:
     schedule.run_pending()
     time.sleep(1)
