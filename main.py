@@ -67,11 +67,11 @@ def job():
    base_EURO.drop(['Data'],inplace=True, axis=1)
 
    final_base = pd.concat([base_USD, base_EURO],axis = 1)
-   final_base.to_csv("final.csv",index=False)
+   final_base.to_csv("/tmp/final.csv",index=False)
    console.success("final.csv")
 
 def main ():
-  schedule.every().day.at("21:10").do(job)
+  schedule.every().day.at("21:20").do(job)
   while True:
     schedule.run_pending()
     time.sleep(1)
